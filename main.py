@@ -1,9 +1,6 @@
-from rq import Queue
 from fastapi import FastAPI
-from worker import conn
+from worker import conn, q
 from utils import count_words_at_url
-
-q = Queue(connection=conn)
 
 app = FastAPI()
 
