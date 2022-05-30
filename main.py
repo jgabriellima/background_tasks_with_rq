@@ -11,6 +11,5 @@ app = FastAPI()
 @app.get("/")
 async def root():
     source = 'http://heroku.com'
-    result = q.enqueue(count_words_at_url, source)
-
-    return {"message": f"source: {source} result: {result}"}
+    job = q.enqueue(count_words_at_url, source)
+    return {"message": f"source: {source} result: {job.result}"}
