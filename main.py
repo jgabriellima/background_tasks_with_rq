@@ -12,7 +12,7 @@ async def root():
     return {"message": f"source: {source} result: {job}"}
 
 
-@app.get("/job/:id")
+@app.get("/job/{id}")
 async def readjob(id: str):
     source = 'http://heroku.com'
     job = q.fetch_job(id)
